@@ -1,0 +1,16 @@
+extends layout
+block content
+  h1= title
+  - var results = [{"earbuds_company":"Apple","earbuds_cost":"10000","earbuds_colour":"white"},{"earbuds_company":"boat","earbuds_cost":"5000","earbuds_colour":"black"},{"earbuds_company":"oneplus","earbuds_cost":"8000","earbuds_colour":"blue"}];
+
+  div(class="container-fluid")
+
+    div(class="row")
+
+    each item in results
+
+      div(class="col-sm-2") earbuds company:#{item.earbuds_company}, earbuds cost:#{item.earbuds_cost}, earbuds Colour:#{item.earbuds_colour}
+
+  br
+
+
