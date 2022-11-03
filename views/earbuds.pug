@@ -1,16 +1,42 @@
 extends layout
+
+
+
 block content
+
   h1= title
-  - var results = [{"earbuds_company":"Apple","earbuds_cost":"10000","earbuds_colour":"white"},{"earbuds_company":"boat","earbuds_cost":"5000","earbuds_colour":"black"},{"earbuds_company":"oneplus","earbuds_cost":"8000","earbuds_colour":"blue"}];
-
-  div(class="container-fluid")
-
-    div(class="row")
-
-    each item in results
-
-      div(class="col-sm-2") earbuds company:#{item.earbuds_company}, earbuds cost:#{item.earbuds_cost}, earbuds Colour:#{item.earbuds_colour}
 
   br
 
+  - var results = [{earbuds_company:"oneplus", earbuds_colour: "blue", earbuds_cost:8000}, {earbuds_company:"applebuds", earbuds_colour: "white", earbuds_cost:10000},{earbuds_company:"boatearbuds", earbuds_colour: "black", earbuds_cost:5000}]
+
+   div(class = "container-fluid")
+
+    div(class = "row")
+
+     each item,index in results
+
+        div(class="col-sm-2" onclick=`buy(${index})`) earbuds_company: #{item.earbuds_company}
+
+        br
+
+        br
+
+        div(class="col-sm-2" onclick=`buy(${index})`) earbuds_colour: #{item.earbuds_colour}
+
+        br
+
+        br  
+
+        div(class="col-sm-2" onclick=`buy(${index})`) earbuds_cost: #{item.earbuds_cost}
+
+   script.
+
+          function buy(itemNo)
+
+          {
+
+              alert(`You purchased item ${itemNo+1}`)
+
+          }     
 
